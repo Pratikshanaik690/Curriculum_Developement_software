@@ -1,0 +1,176 @@
+create database gp_cur_db;
+
+use gp_cur_db;
+
+create table admin_master
+(
+          userid varchar(20) primary key,
+          admin_password varchar(20)
+);
+
+insert into admin_master values("admin", "admin");
+
+create table subjects
+(
+	srno int(4) primary key auto_increment,
+	department varchar(100),
+	semester varchar(100),
+	programme_title varchar(200),	
+	subject varchar(100),
+	subject_code varchar(100) unique,
+	rationale varchar(2000),
+	objectives varchar(2000),
+	unique (department, semester, subject, subject_code)
+);
+
+create table contents
+(
+	srno integer(4) primary key auto_increment,
+	department varchar(100),
+	semester varchar(60),
+	subject varchar(100),
+	subject_code varchar(100),
+	unit_number integer(4),
+	unit_name varchar(100),
+	unit_contents varchar(3000),
+	hours integer(4),
+	marks integer(4),
+	strategies varchar(2000),
+	unique(department, semester, subject, subject_code, unit_number, unit_name)	
+);
+
+create table practicals
+(
+	srno int(4) auto_increment unique,
+	department varchar(100),
+	semester varchar(50),
+	subject varchar(200),
+	subject_code varchar(50),
+	practical_name varchar(500),
+	instructional_strategy varchar(2000),
+	unique(department, semester, subject, subject_code, practical_name)
+);
+
+create table books
+(
+	srno integer(4) auto_increment unique,
+	department varchar(100),
+	semester varchar(50),
+	subject varchar(200),
+	subject_code varchar(50),
+	book_title varchar(200),
+	author varchar(100),
+	publication varchar(150),
+	unique(department, semester, subject, book_title)
+);
+
+create table teaching_scheme
+(
+	srno integer(4) auto_increment unique,
+	department varchar(100),
+	semester varchar(50),
+	subject varchar(200),
+	subject_code varchar(50),
+	level_of_course varchar(50),
+	pre_requisite varchar(50),
+	weekly_theory_hours integer(4),
+	weekly_practical_hours integer(4),
+	total_credits integer(4),
+	total_weeks integer(4),
+	total_theory_hours integer(4),
+	total_practical_hours integer(4),
+	unique(department, semester, subject, subject_code)
+);
+
+create table exam_scheme
+(
+	srno integer(4) auto_increment unique,
+	department varchar(100),
+	semester varchar(50),
+	subject varchar(200),
+	subject_code varchar(50),
+	max_paper_marks integer(4),
+	min_paper_marks integer(4),
+	max_pa_marks integer(4),
+	max_th_marks integer(4),
+	min_th_marks integer(4),
+	max_pr_marks integer(4),
+	min_pr_marks integer(4),
+	max_tw_marks integer(4),
+	min_tw_marks integer(4),
+	max_thpr_marks integer(4),
+	unique(department, semester, subject, subject_code)
+);
+
+create table specification_table
+(
+	srno integer(4) auto_increment unique,
+	department varchar(100),
+	semester varchar(50),
+	subject varchar(200),
+	subject_code varchar(50),
+	topic_no integer(4),
+	marks_per_topic integer(4),
+	times_marks integer(4),
+	q1_marks varchar(100),
+	q2_marks varchar(100),
+	q3_marks varchar(100),
+	q4_marks varchar(100),
+	q5_marks varchar(100),
+	q6_marks varchar(100),
+	actual_alloted_marks integer(4),
+	unique(department, semester, subject, subject_code, topic_no)
+);
+
+create table course_outcomes
+(
+	srno integer(4) auto_increment unique,
+	department varchar(50),
+	semester varchar(20),
+	subject varchar(50),
+	subject_code varchar(20),
+	course_outcome varchar(500),
+	unique(department, semester, subject, subject_code, course_outcome)
+);
+
+create table micro_projects
+(
+	srno integer(4) auto_increment unique,
+	department varchar(50),
+	semester varchar(20),
+	subject varchar(50),
+	subject_code varchar(20),
+	micro_projects varchar(2000),
+	unique(department, semester, subject, subject_code)
+);
+
+create table student_activities
+(
+	srno integer(4) auto_increment unique,
+	department varchar(50),
+	semester varchar(20),
+	subject varchar(50),
+	subject_code varchar(20),
+	student_activities varchar(2000),
+	unique(department, semester, subject, subject_code)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
