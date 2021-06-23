@@ -1,0 +1,30 @@
+a
+{
+	width:150px;
+	font-family:calibri;
+	font-size:17px;
+	color:darkblue;
+	background-color:#EEEEEE;
+}
+
+a:hover
+{
+	width:150px;
+	font-family:calibri;
+	font-size:18px;
+	color:green;
+	border-color:darkblue;
+}
+
+table
+{
+	width: 100%;
+	text-align:center;
+}
+
+td
+{
+	width:100%;
+	background-color:#EEEEEE;
+	height:40px;
+}

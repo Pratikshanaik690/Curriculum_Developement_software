@@ -1,0 +1,13 @@
+header('Window-target: _top');
+header('Location: index.php'); 
+--------------------------------------------
+
+
+window.top.location.href = "start.php"; 
+
+echo "<script>top.window.location = '/start.php'</script>";
+die;
+
+<form action="..." target="_top"> 
+<form action="..." target="_parent">
+

@@ -1,0 +1,7 @@
+To Import SQL Files into MySQL Databases Using phpMyAdmin
+========================================================
+Access your database via PHPMyAdmin
+Click Query window (Query window).
+(cPanel only) On the left, click the database you want to use.
+Go to the Import files tab.
+Click Browse, locate the SQL file on your computer, click Open, and then click Go.
